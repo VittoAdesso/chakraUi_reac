@@ -1,4 +1,4 @@
-# DarkMode ChakraUi
+# DarkMode ChakraUi & others components
 
 Playing with ChakraUi 🏋️‍♀️
 
