@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { IconButton } from "@chakra-ui/button";
+import { useColorMode } from "@chakra-ui/color-mode";
+import { Flex, VStack, Spacer } from "@chakra-ui/layout";
+import { FaSun, FaMoon } from "react-icons/fa";
+
+import AccordionBody from './components/accordionBody';
+import Nav from './components/nav';
 
 function App() {
+   
+  const { colorMode, toggleColorMode } = useColorMode(); 
+  const isDark = colorMode === "dark";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <VStack>
+      <Flex w="100%">
+        {/* <Heading ml="2" size="md" fontWeight='extrabold' 
+        color='WHITE.500' > HELLOOO 👀👀💡👨‍💻👨‍💻</Heading> */}
+        <Nav></Nav>
+        <AccordionBody></AccordionBody>
+        
+        <Spacer></Spacer>
+        <IconButton ml={9} icon={isDark ? <FaSun /> : <FaMoon />} 
+        isRound="true" onClick={toggleColorMode}></IconButton>
+      </Flex>
+    </VStack>
   );
 }
-
+   
 export default App;
